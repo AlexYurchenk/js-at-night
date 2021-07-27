@@ -1,0 +1,78 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+}
+
+.list {
+    margin-right: auto;
+    margin-left: auto;
+    list-style: none;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.list li:not(:last-child) {
+    margin-right: 15px;
+}
+
+.btn {
+    display: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn.is-open {
+    display: block;
+}
+
+.lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.lightbox__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.95);
+    transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open .lightbox__content {
+    transform: scale(1);
+}
+
+.lightbox__image {
+    width: 800px;
+    display: block;
+}
